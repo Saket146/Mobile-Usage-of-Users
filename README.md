@@ -8,7 +8,7 @@ Dimensionality reduction technique : Principle Component Analysis. Techniques us
 
 Let's see in detail.
 
-#Importing important libraries
+# Importing important libraries
 In this section I have imported the following three important libraries:
 
 Pandas as pd
@@ -17,20 +17,20 @@ Matplotlib as plt
 Importing the dataset
 In this section I have imported the dataset. The variable X has the columns neccesary for making a prediction such as "App Usage time", "Screen ON Time", "Battery Drained", "Data Used". The other columns does not affect the prediction. So there is no need to include them. The variable y has the group in which people are classified based upon the data in variable X. The Xgboost model expects the data in the dependent variable(y) to have the starting value as 0. So i have decremented all the values in y by 1.
 
-#Splitting the data into training set and test set
+# Splitting the data into training set and test set
 Our data need to be split into training data and testing data before start of model building. We train the model on the training data and test our model using the testing data to detect any bugs or errors in our model. Usually the testing data consists of 20% of whole data. X_train, y_train consists of training data. X_test and y_test consists of testing data.
 
-#Feature Scalling
+# Feature Scaling
 The features(data in x) are scalled using the standardizing technique which is given as
 
 X' = (X - Xmin)/(Xmax - Xmin)
 
 It is used to prevent some of the features in dataset to get dominated by other features and the model do not even consider those features.
 
-#Principal Component Analysis
+# Principal Component Analysis
 It finds the co-relaton between the variables and if there is a strong relation it will reduce the variables In this way it will reduce the dimensions and make the model easy to learn.
 
-#Building the model
+# Building the model
 I trained my model on Xgboost. To use this we have to import XGBClassifier from Xgboost module and create an instance of this class as "Classifier". Fit the X_train, y_train values so that model gets trained on Xgboost using training values.
 
 Create a confusion matrix and accuracy score for our testing data which will describe how our model is responding to new values. Confusion matrix shows the exact predictions of our model by showing the ones which were predicted incorrect and which were predicted correct. "confusion_matrix" and "accuracy_score" are imported from the sklearn library. Introduce a new variable "y_pred" which will take the prediction of dependent variable (To which group the user belong). Display the confusion matrix and accuracy for our testing data. Here we see that 3 predictions of group 2 were predicted incorrectly and we got a good accuracy of 97.8 %.
